@@ -1,6 +1,11 @@
 #directories
+<<<<<<< HEAD
 /bin
 /bin-int
+=======
+Engine/bin
+Engine/bin-int
+>>>>>>> 881b4c6 (Project Setup)
 Engine/.vs
 
 
