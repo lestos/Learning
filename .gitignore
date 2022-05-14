@@ -1,0 +1,11 @@
+#directories
+/bin
+/bin-int
+Engine/.vs
+
+
+#files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
