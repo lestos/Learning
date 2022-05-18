@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Engine/Core.h"
+// to be deleted
+#include "pch.h"
 
-#include <string>
-#include <functional>
+#include "Engine/Core.h"
 
 namespace Engine {
 
