@@ -5,10 +5,10 @@
 
 namespace Engine {
 
-	class ENGINE_API WindowsResizeEvent : public Event
+	class ENGINE_API WindowResizeEvent : public Event
 	{
 	public:
-		WindowsResizeEvent(unsigned int width, unsigned int height)
+		WindowResizeEvent(unsigned int width, unsigned int height)
 			: m_Width(width), m_Height(height) {}
 
 		inline unsigned int GetWidth() const { return m_Width; }
@@ -28,10 +28,10 @@ namespace Engine {
 	};
 
 
-	class ENGINE_API WindowsCloseEvent : public Event
+	class ENGINE_API WindowCloseEvent : public Event
 	{
 	public:
-		WindowsCloseEvent() {}
+		WindowCloseEvent() {}
 
 		EVENT_CLASS_TYPE(WindowClose)
 		EVENT_CLASS_CATEGORY(EventCategoryApplication)

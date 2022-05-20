@@ -15,7 +15,7 @@ namespace Engine {
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
 		KeyPressed, KeyReleased,
-		MoudeButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
+		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
 	enum EventCategory
@@ -47,7 +47,9 @@ namespace Engine {
 		{
 			return GetCategoryFlags() & category;
 		}
-	protected:
+
+//TODO: Should be protected. Error that function have no access to protected member. Not sure why error.
+	public:
 		bool m_Handled = false;
 	};
 
