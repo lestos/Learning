@@ -65,14 +65,17 @@ project "Engine"
 
 	filter "configurations:Debug"
 		defines "LRN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "LRN_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "LRN_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 
@@ -113,12 +116,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "LRN_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "LRN_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "LRN_DIST"
+		buildoptions "/MD"
 		optimize "On"
