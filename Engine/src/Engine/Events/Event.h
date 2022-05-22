@@ -36,7 +36,7 @@ namespace Engine {
 
 	class ENGINE_API Event
 	{
-		friend class EventDispatcher;
+		friend class EventDisptcher;
 	public:
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
@@ -48,8 +48,7 @@ namespace Engine {
 			return GetCategoryFlags() & category;
 		}
 
-//TODO: Should be protected. Error that function have no access to protected member. Not sure why error.
-	public:
+	protected:
 		bool m_Handled = false;
 	};
 
