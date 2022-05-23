@@ -2,6 +2,8 @@
 /bin
 /bin-int
 /.vs
+/Engine/vendor/Glad/bin
+/Engine/vendor/Glad/bin-int
 
 #files
 *.sln
