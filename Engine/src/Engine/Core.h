@@ -11,6 +11,10 @@
 	#error Engine supports Windows only!
 #endif
 
+#ifdef LRN_DEBUG
+	#define LOG_ENABLE_ASSERTS
+#endif
+
 #ifdef LOG_ENABLE_ASSERTS
 	#define LOG_ASSERT(x, ...) { if(!(x)) { LOG_ERROR("Assertion Failed: {0}", __VA_ARGS__)}; __debugbreak(); } }
 	#define LOG_CORE_ASSERT(x, ...) { if(!(x)) { LOG_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__)}; __debugbreak(); } }

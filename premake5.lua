@@ -57,7 +57,6 @@ project "Engine"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -74,17 +73,20 @@ project "Engine"
 
 	filter "configurations:Debug"
 		defines "LRN_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
+		staticruntime "Off"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "LRN_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
+		staticruntime "Off"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "LRN_DIST"
-		buildoptions "/MD"
+		runtime "Release"
+		staticruntime "Off"
 		optimize "On"
 
 
@@ -115,7 +117,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -125,15 +126,18 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "LRN_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
+		staticruntime "Off"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "LRN_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
+		staticruntime "Off"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "LRN_DIST"
-		buildoptions "/MD"
+		runtime "Release"
+		staticruntime "Off"
 		optimize "On"
