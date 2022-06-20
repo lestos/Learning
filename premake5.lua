@@ -24,8 +24,10 @@ include "Engine/vendor/imgui"
 
 project "Engine"
 	location "Engine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -39,6 +41,11 @@ project "Engine"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/**.hpp",
 		"%{prj.name}/vendor/glm/**.inl"
+	}
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	includedirs
@@ -60,7 +67,6 @@ project "Engine"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines
@@ -70,34 +76,28 @@ project "Engine"
 			"GLFW_INCLUDE_NONE"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
-		}
-
 	filter "configurations:Debug"
 		defines "LRN_DEBUG"
 		runtime "Debug"
-		staticruntime "Off"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "LRN_RELEASE"
 		runtime "Release"
-		staticruntime "Off"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "LRN_DIST"
 		runtime "Release"
-		staticruntime "Off"
-		optimize "On"
+		optimize "on"
 
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -122,7 +122,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines
@@ -133,17 +132,14 @@ project "Sandbox"
 	filter "configurations:Debug"
 		defines "LRN_DEBUG"
 		runtime "Debug"
-		staticruntime "Off"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "LRN_RELEASE"
 		runtime "Release"
-		staticruntime "Off"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "LRN_DIST"
 		runtime "Release"
-		staticruntime "Off"
-		optimize "On"
+		optimize "on"
